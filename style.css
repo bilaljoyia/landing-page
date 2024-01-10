@@ -1,0 +1,145 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+    height: 100vh;
+    background-color: #333;
+    color: #222;
+}
+
+.heading{
+text-align: center;
+background-color: #6FC2CA;
+padding: 14px 14px;
+}
+
+.container {
+    background-color: #fff;
+    width: 100vw;
+    padding: 50px;
+}
+
+.container.show-nav {
+    transform: rotate(-20deg);
+    transform-origin: top left;
+    transition: transform 0.5s linear;
+}
+
+.circle-container {
+    position: fixed;
+    left: -100px;
+    top: -100px;
+}
+
+.circle {
+    position: relative;
+    background-color: #EDB506;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+.circle button {
+    position: absolute;
+    background: transparent;
+    left: 50%;
+    top: 50%;
+    height: 100px;
+    border: none;
+    font-size: 20px;
+    transition: transform 0.5s linear;
+    cursor: pointer;
+}
+
+.circle button#open {
+    left: 60%;
+}
+
+.circle button#close {
+    top: 60%;
+    transform: rotate(90deg);
+    transform-origin: top left;
+}
+
+.content img {
+    grid-template-rows: 1fr 1fr;
+    width: 100%;
+}
+.img{
+    /* width: 600px; */
+    gap: 2rem;
+    display: flex;
+    margin: auto;
+}
+.content {
+    max-width: 1000px;
+    margin: 50px auto;
+
+}
+
+.content small {
+    font-style: italic;
+    font-size: 1rem;
+}
+
+.content p {
+    color: #333;
+    line-height: 1.5;
+    font-family: inherit;
+}
+
+.container.show-nav+nav li {
+    transform: translateX(0);
+    transition-delay: 0.3s;
+}
+
+.container.show-nav .circle {
+    transform: rotate(-70deg);
+   /* transi   tion: transform 0.5s ease-in; */
+}
+
+
+/* ********** Navbar ******* */
+
+nav {
+    position: fixed;
+    bottom: 40px;
+    z-index: 100;
+    left: 0;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    color: #fff;
+    font-size: 20px;
+    margin: 30px 0;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+nav ul li i {
+    color: #fff;
+    margin-right: 10px;
+}
+
+nav ul li {
+    transform: translate(-100%);
+    transition: transform 0.5s ease-in;
+}
+
+nav ul li+li {
+    margin-left: 15px;
+    transform: translate(-150%);
+
+}
+
+nav ul li+li+li {
+    margin-left: 30px;
+    transform: translate(-200%);
+
+}
